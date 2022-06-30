@@ -1,0 +1,18 @@
+[
+  {
+    "iddetallecompra": 1,
+    "idcompra": 1,
+    "idarticulo": 8,
+    "preciocompra": 105,
+    "cantidadcompra": 50,
+    "descuentocompra": 0
+  },
+  {
+    "iddetallecompra": 2,
+    "idcompra": 2,
+    "idarticulo": 9,
+    "preciocompra": 190,
+    "cantidadcompra": 50,
+    "descuentocompra": 0
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "idusuario": 1,
+    "contrasena": "1234",
+    "nombreusuario": "Gabriel ",
+    "apellidousuario": "Rodriguez",
+    "direccionusuario": "cementerio 1c al Norte",
+    "telefonousuario": 8454887
+  },
+  {
+    "idusuario": 2,
+    "contrasena": "12345",
+    "nombreusuario": "Francisco",
+    "apellidousuario": "Garcia",
+    "direccionusuario": "Detras de la viña",
+    "telefonousuario": 78454812
+  }
+]

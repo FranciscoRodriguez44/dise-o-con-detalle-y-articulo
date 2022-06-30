@@ -1,0 +1,65 @@
+[
+  {
+    "idarticulo": 3,
+    "nombrearticulo": "engrapadora",
+    "descripcionarticulo": "engrapadora pequeña",
+    "idcategoria": 1,
+    "idmarca": 1
+  },
+  {
+    "idarticulo": 5,
+    "nombrearticulo": "lapicero",
+    "descripcionarticulo": "rojo largo",
+    "idcategoria": 2,
+    "idmarca": 1
+  },
+  {
+    "idarticulo": 6,
+    "nombrearticulo": "Libreta mediana",
+    "descripcionarticulo": "Libreta mediana encolochada 150h",
+    "idcategoria": 1,
+    "idmarca": 1
+  },
+  {
+    "idarticulo": 7,
+    "nombrearticulo": "Libreta mediana",
+    "descripcionarticulo": "Libreta mediana encolochada 150h",
+    "idcategoria": 1,
+    "idmarca": 1
+  },
+  {
+    "idarticulo": 8,
+    "nombrearticulo": "Lapiz mecanico",
+    "descripcionarticulo": "Lapiz mecanico ",
+    "idcategoria": 1,
+    "idmarca": 1
+  },
+  {
+    "idarticulo": 9,
+    "nombrearticulo": "Engrapadora",
+    "descripcionarticulo": "Engrapadora mediana 250 grapas",
+    "idcategoria": 1,
+    "idmarca": 2
+  },
+  {
+    "idarticulo": 10,
+    "nombrearticulo": "Grapadora BIC",
+    "descripcionarticulo": "Grapadora mediana plastica BIC",
+    "idcategoria": 1,
+    "idmarca": 1
+  },
+  {
+    "idarticulo": 11,
+    "nombrearticulo": "mecanico 0.7mm",
+    "descripcionarticulo": "Lapiz mecanico metalico",
+    "idcategoria": 1,
+    "idmarca": 2
+  },
+  {
+    "idarticulo": 12,
+    "nombrearticulo": "acuerelas",
+    "descripcionarticulo": "acuarelas chocoyo",
+    "idcategoria": 1,
+    "idmarca": 2
+  }
+]

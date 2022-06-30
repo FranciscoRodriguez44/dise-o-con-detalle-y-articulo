@@ -1,0 +1,17 @@
+[
+  {
+    "idcategoria": 1,
+    "nombrecategoria": "Escolares y oficinales",
+    "descripcioncategoria": "Cuaderno, libreta, agenda, archivadores,y correctores, engrapadoras y perforadoras, lapices de grafito y mecanico"
+  },
+  {
+    "idcategoria": 2,
+    "nombrecategoria": "Papeleria",
+    "descripcioncategoria": "Hoja de tamaño diversos "
+  },
+  {
+    "idcategoria": 3,
+    "nombrecategoria": "Pinturas",
+    "descripcioncategoria": "Pinturas, acuarelas etc"
+  }
+]

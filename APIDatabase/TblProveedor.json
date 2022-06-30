@@ -1,0 +1,14 @@
+[
+  {
+    "idproveedor": 1,
+    "nombreproveedor": "Gabriel Campos",
+    "telefonoproveedor": 76657514,
+    "direccionproveedor": "Cementerio 1c al norte"
+  },
+  {
+    "idproveedor": 2,
+    "nombreproveedor": "Francisco Rodriguez",
+    "telefonoproveedor": 85851515,
+    "direccionproveedor": "detras de la viña"
+  }
+]

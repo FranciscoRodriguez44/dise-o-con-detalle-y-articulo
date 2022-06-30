@@ -1,0 +1,22 @@
+[
+  {
+    "idcompra": 1,
+    "fechacompra": "2021-06-12",
+    "idusuario": 1,
+    "subtotalcompra": 100,
+    "iva": 15,
+    "descuentocompra": 10,
+    "totalcompra": 105,
+    "idproveedor": 1
+  },
+  {
+    "idcompra": 2,
+    "fechacompra": "2021-05-10",
+    "idusuario": 1,
+    "subtotalcompra": 200,
+    "iva": 15,
+    "descuentocompra": 20,
+    "totalcompra": 190,
+    "idproveedor": 2
+  }
+]

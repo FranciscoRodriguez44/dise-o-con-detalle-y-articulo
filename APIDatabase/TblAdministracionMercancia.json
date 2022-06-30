@@ -1,0 +1,20 @@
+[
+  {
+    "idadministracionmercancia": 1,
+    "idarticulo": 8,
+    "preciocompraunidad": 10,
+    "precioventa": 15,
+    "existencia": 50,
+    "descripcionarticulo": "Lapiz mecanico",
+    "nombrearticulo": "Lapiz mecanico metalico "
+  },
+  {
+    "idadministracionmercancia": 2,
+    "idarticulo": 9,
+    "preciocompraunidad": 25,
+    "precioventa": 33,
+    "existencia": 30,
+    "descripcionarticulo": "Engrapadora",
+    "nombrearticulo": "Engrapadora mediana 250 grapas "
+  }
+]

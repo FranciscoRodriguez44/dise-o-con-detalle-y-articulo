@@ -1,0 +1,12 @@
+[
+  {
+    "idfactura": 1,
+    "fechafactura": "2022-05-31T00:00:00",
+    "nombrecliente": "ElProfe",
+    "totalventa": 30,
+    "subtotalventa": 30,
+    "iva": 0,
+    "idusuario": 1,
+    "descuentofactura": 0
+  }
+]
