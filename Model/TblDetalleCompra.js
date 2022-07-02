@@ -31,7 +31,7 @@ class TblDetalleCompra extends Entity{
                 return this.TblArticulos.val;
             }            
         }, set(newValue) {
-            this.TblArticulos.val = newValue;//antes estaba tbldetallecompra
+            this.TblArticulos.val = newValue;
         }
     }
 

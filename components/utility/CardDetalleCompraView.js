@@ -14,7 +14,7 @@ class CardDetalleCompraView extends React.Component {
         }
      this.CargarArticulo(this.props.data)
      //this.Editardatos=this.props.EditarVacio;
-     this.Editar = this.props.FunEditar;
+    // this.Editar = this.props.FunEditar;
      this.EliminarDetalleCompra = this.props.EliminarDetalleCompra;
     }
 

@@ -83,54 +83,13 @@ class FrmCompra extends React.Component {
     //     this.props.navigation.navigate("FrmCompra");
     // }
 
-    GuardarDetalleCompra =async(Detalle=(new TblDetalleCompra),key,flag)=>{
-
-        if(this.state.detallecompra.length > 0){
-
-            const detallecompras =this.state.detallecompra.map(p=>{
-                if(p.idarticulo === key){
-                    this.keys =p.idarticulo
-
-                    this.total = p.preciocompra;
-                        if(flag){
-                            p.cantidad=(parseFloat(p.cantidadcompra)+parseFloat(Detalle.cantidadcompra));
-                            p.descuentocompra=(parseFloat(p.descuentocompra)+ parseFloat(Detalle.descuentocompra));
-
-                        }else{
-                            p.cantidad = Detalle.cantidadcompra;
-                            p.descuentocompra = Detalle.descuentocompra;
-                        }
-                        this.NewTotal=p.descuentocompra;
-                        //return p;
-                }
-                return p;
-
-            });
-            if(this.keys ==key){
-                this.setState({
-                    detallecompra:detallecompras,
-                });
-            }else{
-                this.state.detallecompra.push(Detalle);
-                this.setState({
-                    detallecompra:this.state.detallecompra
-                });
-            }
-            
-            //console.log(this.keys + " == "+ key);
-        }else{
-            this.state.detallecompra.push(Detalle);
-            this.setState({
-                detallecompra:this.state.detallecompra,
-            });
-        }
-       // this.state.detallecompra.push(Detalle);
-        
+    GuardarDetalleCompra = async (Detalle = (new TblDetalleCompra())) => {
+        this.state.detallecompra.push(Detalle);
+        this.setState({
+            detallecompra: this.state.detallecompra
+        })
         this.props.navigation.navigate("FrmCompra");
     }
-
-
-
 
     SeleccionProveedor = async (key, Name) => {
         this.setState({
