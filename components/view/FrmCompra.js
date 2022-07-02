@@ -1,3 +1,4 @@
+import Item from 'antd/lib/list/Item';
 import React from 'react';
 
 import { StyleSheet, Text, Button, View, TouchableOpacity,Image, TextInput, ScrollView } from 'react-native';
@@ -17,12 +18,16 @@ class FrmCompra extends React.Component {
         super()
         this.props = props;
         this.compra = new TblCompra();
+       //this.detallecompra = new TblDetalleCompra();
         this.state = {
             ID: "",
             detallecompra: [],
             proveedor: "",
             fecha: Date().toString(),
         }
+        this.keys=0;
+        this.NewTotal = 0;
+        this.total = 0;
         this.CargarCompra = this.props.route.params.CargarCompra;
 
 
@@ -78,13 +83,55 @@ class FrmCompra extends React.Component {
     //     this.props.navigation.navigate("FrmCompra");
     // }
 
-    GuardarDetalleCompra =async(Detalle=(new TblDetalleCompra()))=>{
-        this.state.detallecompra.push(Detalle);
-        this.setState({
-            detallecompra:this.state.detallecompra
-        })
+    GuardarDetalleCompra =async(Detalle=(new TblDetalleCompra),key,flag)=>{
+
+        if(this.state.detallecompra.length > 0){
+
+            const detallecompras =this.state.detallecompra.map(p=>{
+                if(p.idarticulo === key){
+                    this.keys =p.idarticulo
+
+                    this.total = p.preciocompra;
+                        if(flag){
+                            p.cantidad=(parseFloat(p.cantidadcompra)+parseFloat(Detalle.cantidadcompra));
+                            p.descuentocompra=(parseFloat(p.descuentocompra)+ parseFloat(Detalle.descuentocompra));
+
+                        }else{
+                            p.cantidad = Detalle.cantidadcompra;
+                            p.descuentocompra = Detalle.descuentocompra;
+                        }
+                        this.NewTotal=p.descuentocompra;
+                        //return p;
+                }
+                return p;
+
+            });
+            if(this.keys ==key){
+                this.setState({
+                    detallecompra:detallecompras,
+                });
+            }else{
+                this.state.detallecompra.push(Detalle);
+                this.setState({
+                    detallecompra:this.state.detallecompra
+                });
+            }
+            
+            //console.log(this.keys + " == "+ key);
+        }else{
+            this.state.detallecompra.push(Detalle);
+            this.setState({
+                detallecompra:this.state.detallecompra,
+            });
+        }
+       // this.state.detallecompra.push(Detalle);
+        
         this.props.navigation.navigate("FrmCompra");
     }
+
+
+
+
     SeleccionProveedor = async (key, Name) => {
         this.setState({
             ID: key,
@@ -92,6 +139,14 @@ class FrmCompra extends React.Component {
         });
 
         this.compra.idproveedor = key;
+    }
+    FunEditar = async (item) => {
+       
+        this.props.navigation.navigate("FrmDetalleCompra", {
+            GuardarDetalleCompra: this.GuardarDetalleCompra,
+            Datos: item
+        });
+    
     }
     Save =async()=> {
         this.compra.fecha=this.state.fecha;
@@ -103,7 +158,14 @@ class FrmCompra extends React.Component {
             await detallecompra.Save("iddetallecompra")
         }
     }
+    EliminarDetalleCompra = async (item) => {
 
+        const delete_item = this.state.detallecompra.filter(i => i.idarticulo !== item.idarticulo);
+ 
+        this.setState({
+            detallecompra: delete_item,
+        });
+    }
 
 
     render() {
@@ -157,6 +219,8 @@ class FrmCompra extends React.Component {
                 {
                     this.state.detallecompra.map(
                         c => <CardDetalleCompraView key={c.idarticulo} data={c}
+                        FunEditar = {this.FunEditar}
+                        EliminarDetalleCompra = {this.EliminarDetalleCompra} 
                         />
                     )
                 }

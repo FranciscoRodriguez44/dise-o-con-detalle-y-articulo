@@ -15,12 +15,51 @@ class FrmDetalleCompra extends React.Component {
         this.Detalle = new TblDetalleCompra();
         this.state = {
             Id: "",
-            articulo: ""
+            articulo: "",
+            precio:"",
+            cantidad:"",
+            descuentocompra:"",
         }
+     
+        this.nombrearticulo = "";
+
         this.GuardarDetalleCompra = this.props.route.params.GuardarDetalleCompra;
+        ///this.Editardatos(this.props.route.params.Datos ?? null)
+        this.Editar(this.props.route.params.Datos ?? null)
         this.flag = true;
     }
+    Editar = async (obje = (new TblDetalleCompra())) => {
+      
+        if(obje != null) {
+            const a = await this.Detalle.TblArticulos.get();
+            
 
+            const NameProduct = a.filter(i => i.idarticulo == obje.idarticulo);
+        
+
+            NameProduct.forEach(element => {
+                this.nombrearticulo = element.nombrearticulo;
+            });
+            
+
+            this.setState({
+                Id: obje.idarticulo,
+                articulo:this.nombrearticulo,
+                precio:obje.preciocompra,
+                cantidad: obje.cantidadcompra,
+                descuentocompra:obje.descuentocompra
+
+            });
+
+            this.Detalle.idarticulo = obje.idarticulo;
+            this.Detalle.preciocompra = obje.preciocompra;
+            this.Detalle.Cantidad = obje.cantidadcompra;
+            this.Detalle.descuentocompra = obje.descuentocompra;
+            
+            this.flag = false;
+        }
+       
+    }
     GuardarArticulo = async (key, Name) => {
     
         this.setState({
@@ -30,6 +69,8 @@ class FrmDetalleCompra extends React.Component {
 
         this.Detalle.idarticulo = key.toString();
     }
+
+   
     render() {
         return (<ScrollView style={styles.container}>
               <Image
@@ -46,7 +87,7 @@ class FrmDetalleCompra extends React.Component {
                 <View style = { styles.box_row }>
                     <TextInput style = {styles.InputStyle}
                         placeholder='Articulo'
-                        value = { this.state.articulo }
+                        value = {this.state.articulo }
                         disabled />
 
                     <TextInput style = {styles.subitem_2}
@@ -69,17 +110,25 @@ class FrmDetalleCompra extends React.Component {
             <TextInput style={styles.InputStyle}
                 placeholder="Precio Compra"
                 multiline
-                onChangeText={(val) => this.Detalle.preciocompra = val}>
+                onChangeText={(val) => this.Detalle.preciocompra = val}
+                //value={this.state.precio}
+              // editable={true}
+                >
                 </TextInput>
             <TextInput style={styles.InputStyle}
                 placeholder="Cantidad Compra"
                 multiline
-                onChangeText={(val) => this.Detalle.cantidadcompra = val}>
+                onChangeText={(val) => this.Detalle.cantidadcompra = val}
+                //value={this.state.cantidad}
+               //editable={true}
+               >
             </TextInput>
             <TextInput style={styles.InputStyle}
                 placeholder="Descuento"
-                multiline
-                onChangeText={(val) => this.Detalle.descuentocompra = val}>
+                //multiline
+                onChangeText={(val) => this.Detalle.descuentocompra = val}
+               // value ={this.state.descuentocompra}
+               >
             </TextInput>
 
 
@@ -89,6 +138,7 @@ class FrmDetalleCompra extends React.Component {
 
 
             <Flatbutton2 text='AÑADIR DATOS ' onPress={async () => {
+                //this.Detalle.descuentocompra =this.state.descuentocompra;
                  this.GuardarDetalleCompra(this.Detalle, this.state.Id, this.flag); 
             }} />
             <Flatbutton text='Cancelar y Regresar' onPress={() =>

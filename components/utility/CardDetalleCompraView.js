@@ -13,7 +13,9 @@ class CardDetalleCompraView extends React.Component {
             Dataset: []
         }
      this.CargarArticulo(this.props.data)
-
+     //this.Editardatos=this.props.EditarVacio;
+     this.Editar = this.props.FunEditar;
+     this.EliminarDetalleCompra = this.props.EliminarDetalleCompra;
     }
 
     CargarArticulo = async (e = (new TblDetalleCompra())) => {
@@ -38,11 +40,13 @@ class CardDetalleCompraView extends React.Component {
 
           <View style = {styles.box_row}>
             <TouchableOpacity onPress={() => {
-              
+              //this.props.EditarVacio(this.props.data);
+              this.props.FunEditar(this.props.data);
                 }} style = {styles.btneditar} >
             <Text style = {styles.ButtonText}>Editar Compra</Text> 
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {
+               this.EliminarDetalleCompra(this.props.data);
               }} style = {styles.btneliminar} >
           <Text style = {styles.ButtonText}>Eliminar Compra</Text> 
           </TouchableOpacity>
