@@ -15,7 +15,7 @@ class DetalleCompraView extends React.Component {
 			DetalleComp: this.props.route.params.DetalleComp,
 			Dataset: this.props.route.params.Dataset ?? []
 		}
-		this.CargarArticulo(this.data);
+		//this.CargarArticulo(this.data);
 	}
 
 	render() {
@@ -37,14 +37,14 @@ class DetalleCompraView extends React.Component {
 		);
 	}
 
-    CargarArticulo = async (e = (new TblDetalleCompra())) => {
-		const list = await e.TblArticulos.get();
-		const result = list.filter(i => i.idarticulo == e.idarticulo);
+//     CargarArticulo = async (e = (new TblDetalleCompra())) => {
+// 		const list = await e.TblArticulos.get();
+// 		const result = list.filter(i => i.idarticulo == e.idarticulo);
   
-		this.setState({
-			Dataset: result
-		});
-	}
+// 		this.setState({
+// 			Dataset: result
+// 		});
+// 	}
 }
 export { DetalleCompraView };
 
